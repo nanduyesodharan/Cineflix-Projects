@@ -9,7 +9,7 @@ from django.db.models import Q
 from django.utils.decorators import method_decorator
 from authentication.permissions import permitted_user_roles
 
-from cineflix.utils import get_recommended_movie
+# from cineflix.utils import get_recommended_movie
 
 from subscriptions.models import UserSubscriptions
 
@@ -178,9 +178,9 @@ class MovieDetailsView(View):
 
         movie=Movie.objects.get(uuid=uuid)
 
-        recommended_movies=get_recommended_movie(movie)
+        # recommended_movies=get_recommended_movie(movie)
 
-        data={'movie':movie, 'page':movie.name,'recommended_movies':recommended_movies}
+        data={'movie':movie, 'page':movie.name,}
 
         return render(request,self.template,context=data)
     
